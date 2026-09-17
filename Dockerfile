@@ -14,7 +14,12 @@ RUN dnf install -y \
 		php-zip \
 	&& dnf clean all
 
-USER 1001
+RUN chown -R g+rwx /var/log && \
+    chown -R g+rwx /var/lib/php && \
+    chown -R g+rwx /var/lib/php/pecl && \
+    chown -R g+rwx /run
+
+    USER 1001
 
 ADD . . 
 
