@@ -12,6 +12,7 @@ RUN dnf install -y \
 		php-pdo \
 		php-pear \
 		php-zip \
+        mariadb \
 	&& dnf clean all
 
 RUN chmod -R g+rwx /var/log && \
