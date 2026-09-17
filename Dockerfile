@@ -14,9 +14,8 @@ RUN dnf install -y \
 		php-zip \
 	&& dnf clean all
 
-ADD . . 
-
-
 USER 1001
+
+ADD . . 
 
 CMD /usr/libexec/s2i/run
