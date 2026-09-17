@@ -14,10 +14,10 @@ RUN dnf install -y \
 		php-zip \
 	&& dnf clean all
 
-RUN chown -R g+rwx /var/log && \
-    chown -R g+rwx /var/lib/php && \
-    chown -R g+rwx /var/lib/php/pecl && \
-    chown -R g+rwx /run
+RUN chmod -R g+rwx /var/log && \
+    chmod -R g+rwx /var/lib/php && \
+    chmod -R g+rwx /var/lib/php/pecl && \
+    chmod -R g+rwx /run
 
     USER 1001
 
