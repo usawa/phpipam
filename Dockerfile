@@ -19,7 +19,9 @@ RUN chmod -R g+rwx /var/log && \
     chmod -R g+rwx /var/lib/php && \
     chmod -R g+rwx /run
 
-    USER 1001
+RUN sed -i "s/.clear_env.=.*/clear_env = no/g" /etc/php-fpm.d/www.conf
+
+USER 1001
 
 ADD . . 
 
